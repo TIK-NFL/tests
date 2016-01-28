@@ -1,0 +1,5 @@
+logger.info('\n-----------------------------------')
+logger.info('\n Welcome to the test gradle build!!')
+logger.info('\n-----------------------------------')
+logger.info('\n OK      :-)')
+logger.info('\n-----------------------------------\n\n')
