@@ -1,5 +1,21 @@
-logger.info('\n-----------------------------------')
-logger.info('\n Welcome to the test gradle build!!')
-logger.info('\n-----------------------------------')
-logger.info('\n OK      :-)')
-logger.info('\n-----------------------------------\n\n')
+task test << {
+    logger.info('\n-----------------------------------')
+    logger.info('\n Welcome to the test gradle build!!')
+    logger.info('\n-----------------------------------')
+
+    def dir = new File('build')
+    dir.mkdir()
+    logger.info("Dir \"$dir\" created")
+
+    def fileNames = ['dummy.jar', 'dummy.war', 'dummy.ear', 'dummy.zip']
+
+    fileNames.each {
+        fileName ->
+             def file = new File('build/' + fileName)
+             file.write "This is the dummy file \"$fileName\"\n"
+             logger.info("File \"$file\" (over)written");
+    }
+
+    logger.info('\n OK: task "test" finished successfully      :-)')
+    logger.info('\n-----------------------------------\n\n')
+}
